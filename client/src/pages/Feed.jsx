@@ -1,6 +1,7 @@
 import React, {useEffect, useState } from 'react'
 import { dummyPostsData } from '../assets/assets'
 import Loading from '../components/Loading'
+import StoriesBar from '../components/StoriesBar'
 
 const Feed = () => {
 
@@ -18,7 +19,7 @@ const Feed = () => {
     <div className='h-full overflow-y-scroll no-scrollbar py-10xl:pr-5 flex items-start justify-center xl:gap-8'>
       {/* stories and post list */}
       <div>
-    <h1>stories here</h1>
+    <StoriesBar/>
     <div className='p-4 space-y-6'> list of posts </div>
       </div>
       {/*right sidbbar */}
