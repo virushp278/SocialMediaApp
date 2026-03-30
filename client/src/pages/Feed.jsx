@@ -2,6 +2,7 @@ import React, {useEffect, useState } from 'react'
 import { dummyPostsData } from '../assets/assets'
 import Loading from '../components/Loading'
 import StoriesBar from '../components/StoriesBar'
+import PostCard from '../components/PostCard'
 
 const Feed = () => {
 
@@ -16,11 +17,15 @@ const Feed = () => {
   useEffect(() => { fetchFeeds() }, [])
 
   return !loading ? (
-    <div className='h-full overflow-y-scroll no-scrollbar py-10xl:pr-5 flex items-start justify-center xl:gap-8'>
+    <div className='h-full overflow-y-scroll no-scrollbar py-10 xl:pr-5 flex items-start justify-center xl:gap-8'>
       {/* stories and post list */}
       <div>
     <StoriesBar/>
-    <div className='p-4 space-y-6'> list of posts </div>
+    <div className='p-4 space-y-6'> 
+      {feeds.map((post)=>(
+        <PostCard key={post._id} post={post}/>
+      ))}
+       </div>
       </div>
       {/*right sidbbar */}
       <div>
