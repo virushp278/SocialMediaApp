@@ -7,6 +7,7 @@ import {
   dummyFollowingData as following,
   dummyPendingConnectionsData as pendingConnections
 } from '../assets/assets'
+import UserCard from '../components/UserCard'
 
 const Connections = () => {
 
@@ -104,6 +105,15 @@ const Connections = () => {
             ))}
 
           </div>
+          <div className="flex flex-wrap gap-6">
+            {users.map((user)=>(
+              <UserCard user={user} key={user._id}/>
+            ))}
+          </div>
+
+          {
+            loading && (<loading height="60vh"/>)
+          }
       </div>
     </div>
   )
