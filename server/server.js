@@ -4,8 +4,9 @@ import mongoose from "mongoose";
 import 'dotenv/config';
 import connectDB from "./configs/db.js";
 import User from "./models/user.js";
-import { serve } from "@inngest/express";
+import { serve } from "inngest/express";
 import {inngest,functions} from "./inngest/index.js";
+
 
 const app= express();
 
@@ -20,3 +21,4 @@ app.use('/api/inngest', serve({client: inngest, functions}))
 const PORT = process.env.PORT || 4000;
 
 app.listen(PORT,()=>console.log(`server is running on port ${PORT}`))
+  
