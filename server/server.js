@@ -3,7 +3,7 @@ import cors from "cors";
 import mongoose from "mongoose";
 import 'dotenv/config';
 import connectDB from "./configs/db.js";
-import User from "./models/user.js";
+import User from "./models/User.js";
 import { serve } from "inngest/express";
 import {inngest,functions} from "./inngest/index.js";
 
