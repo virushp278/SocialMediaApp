@@ -74,11 +74,6 @@ const syncUserDeletion = inngest.createFunction(
 
 
         await User.findByIdAndDelete(id)
-
-
-        //check availabitly of User
-        const user = await User.findOne({ username })
-
     }
 
 
